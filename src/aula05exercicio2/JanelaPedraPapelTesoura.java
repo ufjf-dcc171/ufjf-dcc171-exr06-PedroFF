@@ -74,54 +74,66 @@ public class JanelaPedraPapelTesoura extends JFrame {
             if (contaRodadas < 8) {
                 valorEscolhido = random.nextInt(valores.length);
                 if (papel.isSelected()) {
-                    if (valorEscolhido == 3) {
-                        vitoriaP1++;
-                        msgm2.setText("Você ganhou essa rodada.");
-                        contaRodadas++;
-                        msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
-                    } else if (valorEscolhido == 2) {
-                        vitoriaP2++;
-                        contaRodadas++;
-                        msgm2.setText("Você perdeu essa rodada.(tesoura)");
-                        msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
-                    } else {
-                        contaRodadas++;
-                        msgm2.setText("Empate");
-                        msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                    switch (valorEscolhido) {
+                        case 3:
+                            vitoriaP1++;
+                            msgm2.setText("Você ganhou essa rodada.");
+                            contaRodadas++;
+                            msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                            break;
+                        case 2:
+                            vitoriaP2++;
+                            contaRodadas++;
+                            msgm2.setText("Você perdeu essa rodada.(tesoura)");
+                            msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                            break;
+                        default:
+                            contaRodadas++;
+                            msgm2.setText("Empate");
+                            msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                            break;
                     }
                 }
                 if (tesoura.isSelected()) {
-                    if (valorEscolhido == 1) {
-                        vitoriaP1++;
-                        msgm2.setText("Você ganhou essa rodada.");
-                        contaRodadas++;
-                        msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
-                    } else if (valorEscolhido == 3) {
-                        vitoriaP2++;
-                        contaRodadas++;
-                        msgm2.setText("Você perdeu essa rodada.(pedra)");
-                        msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
-                    } else {
-                        contaRodadas++;
-                        msgm2.setText("Empate");
-                        msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                    switch (valorEscolhido) {
+                        case 1:
+                            vitoriaP1++;
+                            msgm2.setText("Você ganhou essa rodada.");
+                            contaRodadas++;
+                            msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                            break;
+                        case 3:
+                            vitoriaP2++;
+                            contaRodadas++;
+                            msgm2.setText("Você perdeu essa rodada.(pedra)");
+                            msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                            break;
+                        default:
+                            contaRodadas++;
+                            msgm2.setText("Empate");
+                            msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                            break;
                     }
                 }
                 if (pedra.isSelected()) {
-                    if (valorEscolhido == 2) {
-                        vitoriaP1++;
-                        msgm2.setText("Você ganhou essa rodada.");
-                        contaRodadas++;
-                        msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
-                    } else if (valorEscolhido == 1) {
-                        vitoriaP2++;
-                        contaRodadas++;
-                        msgm2.setText("Você perdeu essa rodada.(papel)");
-                        msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
-                    } else {
-                        contaRodadas++;
-                        msgm2.setText("Empate");
-                        msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                    switch (valorEscolhido) {
+                        case 2:
+                            vitoriaP1++;
+                            msgm2.setText("Você ganhou essa rodada.");
+                            contaRodadas++;
+                            msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                            break;
+                        case 1:
+                            vitoriaP2++;
+                            contaRodadas++;
+                            msgm2.setText("Você perdeu essa rodada.(papel)");
+                            msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                            break;
+                        default:
+                            contaRodadas++;
+                            msgm2.setText("Empate");
+                            msgm3.setText("Jogador: " + vitoriaP1 + " Computador: " + vitoriaP2 + " Rodadas: " + contaRodadas);
+                            break;
                     }
                 }
                 /*if (i == 3 && valorEscolhido == 1) {
@@ -153,6 +165,7 @@ public class JanelaPedraPapelTesoura extends JFrame {
                 } else {
                     msgm4.setText("Você perdeu, boa sorte da próxima vez!");
                 }
+                
             }
         }
     }
